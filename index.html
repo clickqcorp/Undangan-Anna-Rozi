@@ -1,33 +1,292 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Undangan Ana & Rozi</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ana & Rozi | Wedding Invitation</title>
 
-    body {
-      background: #f8f3eb;
-      font-family: Georgia, serif;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-  </style>
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #eee5d6;
+  color: #493b2d;
+  font-family: Georgia, serif;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover {
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #d9c5a6;
+  padding: 35px 20px;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  inset: 15px;
+  border: 1px solid #9b7950;
+  pointer-events: none;
+}
+
+.cover-content {
+  position: relative;
+  z-index: 2;
+  animation: fadeUp 2s ease both;
+}
+
+.cover h1 {
+  font-size: clamp(38px, 10vw, 65px);
+  color: #62472d;
+  margin: 20px 0;
+  font-style: italic;
+}
+
+.cover p {
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+.wayang {
+  width: 145px;
+  margin: 0 auto 20px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.open-button {
+  display: inline-block;
+  margin-top: 35px;
+  padding: 13px 30px;
+  border: 1px solid #785b3b;
+  color: #493b2d;
+  background: transparent;
+  font-family: Georgia, serif;
+  border-radius: 30px;
+  font-size: 14px;
+}
+
+.content {
+  max-width: 650px;
+  margin: auto;
+  text-align: center;
+  padding: 65px 22px;
+}
+
+.content h2 {
+  font-size: 32px;
+  font-style: italic;
+  margin: 18px 0;
+}
+
+.content p {
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+.photo {
+  width: 100%;
+  margin: 28px auto;
+  border-radius: 3px;
+  box-shadow: 0 8px 25px #493b2d22;
+  animation: fadeUp 1.2s ease both;
+}
+
+.gold {
+  color: #987343;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+.divider {
+  width: 70px;
+  height: 1px;
+  background: #a88b60;
+  margin: 25px auto;
+}
+
+.event {
+  background: #e3d4bd;
+  padding: 65px 22px;
+  text-align: center;
+}
+
+.event-card {
+  border: 1px solid #a88b60;
+  padding: 30px 20px;
+  margin: 20px auto;
+  max-width: 420px;
+}
+
+footer {
+  text-align: center;
+  padding: 55px 20px;
+  background: #cbb394;
+}
+
+.music-button {
+  position: fixed;
+  z-index: 20;
+  right: 18px;
+  bottom: 20px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid #a88b60;
+  background: #f5ead8;
+  color: #493b2d;
+  font-size: 20px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
 </head>
+
 <body>
 
-  <img src="IMG_1267.jpeg" alt="Opening">
-  <img src="IMG_1268.jpeg" alt="Undangan">
-  <img src="IMG_1269.jpeg" alt="Detail acara">
+<section class="cover">
+  <div class="cover-content">
+    <div class="wayang">
+      <img src="IMG_1267.jpeg" alt="Ilustrasi wayang">
+    </div>
+    <p>THE WEDDING OF</p>
+    <h1>Ana & Rozi</h1>
+    <div class="divider"></div>
+    <p>UNDANGAN PERNIKAHAN</p>
+    <button class="open-button" onclick="openInvitation()">
+      Buka Undangan
+    </button>
+  </div>
+</section>
+
+<section class="content reveal">
+  <p class="gold">ASSALAMUALAIKUM WARAHMATULLAHI WABARAKATUH</p>
+  <h2>Ana & Rozi</h2>
+  <div class="divider"></div>
+  <p>
+    Dengan memohon rahmat dan ridho Allah SWT,
+    kami bermaksud mengundang Bapak/Ibu/Saudara/i
+    untuk hadir dalam acara pernikahan kami.
+  </p>
+  <img class="photo" src="IMG_1268.jpeg" alt="Foto undangan">
+</section>
+
+<section class="content reveal">
+  <p class="gold">THE BRIDE & THE GROOM</p>
+  <h2>Ana & Rozi</h2>
+  <div class="divider"></div>
+  <p>
+    Dua hati, satu perjalanan, dan satu janji
+    untuk saling menemani sepanjang kehidupan.
+  </p>
+  <img class="photo" src="IMG_1269.jpeg" alt="Foto pasangan">
+</section>
+
+<section class="event reveal">
+  <p class="gold">SAVE THE DATE</p>
+  <h2>Wedding Day</h2>
+  <div class="event-card">
+    <h2>Akad Nikah</h2>
+    <p>Tanggal dan waktu akan diinformasikan</p>
+  </div>
+  <div class="event-card">
+    <h2>Resepsi</h2>
+    <p>Lokasi dan waktu akan diinformasikan</p>
+  </div>
+</section>
+
+<footer>
+  <p class="gold">WITH LOVE</p>
+  <h2>Ana & Rozi</h2>
+  <div class="divider"></div>
+  <p>Terima kasih atas doa dan kehadiran Anda.</p>
+</footer>
+
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-button" id="musicButton" onclick="toggleMusic()">
+  ♪
+</button>
+
+<script>
+const music = document.getElementById("music");
+
+function openInvitation() {
+  music.play().catch(() => {});
+  document.querySelector(".content").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+function toggleMusic() {
+  if (music.paused) {
+    music.play();
+  } else {
+    music.pause();
+  }
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".reveal").forEach(section => {
+  observer.observe(section);
+});
+</script>
 
 </body>
 </html>
